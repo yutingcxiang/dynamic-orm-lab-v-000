@@ -51,6 +51,7 @@ class InteractiveRecord
   end
   
   def self.find_by(input)
+    col = input.keys.to_s
     sql = "SELECT * FROM #{self.table_name} WHERE #{input.keys} = '#{input.values}'"
     DB[:conn].execute(sql)
   end
